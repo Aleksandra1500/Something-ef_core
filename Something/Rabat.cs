@@ -16,6 +16,6 @@ namespace Something
         public int rt_Rodzaj { get; set; }
         public decimal rt_Procent { get; set; }
 
-        public List<Towar> tw_Towar { get; } = new List<Towar>();
+        public List<Towar> Towary { get; set; }
     }
 }

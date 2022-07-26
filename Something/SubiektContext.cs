@@ -12,7 +12,7 @@ namespace Something
     class SubiektContext : DbContext
     {
         public SubiektContext() { }
-        public DbSet<Towar> tw_Towar { get; set; }
+        public DbSet<Towar> tw__Towar { get; set; }
         public DbSet<Rabat> sl_Rabat { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -21,11 +21,18 @@ namespace Something
             {
                 IConfiguration configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("C:\\Users\\Alex_\\OneDrive\\Dokumenty\\Staż\\MiniProjekt\\MiniProjekt\\cnstring.json")
+                    .AddJsonFile("C:\\Users\\Alex_\\OneDrive\\Dokumenty\\Something\\Something\\cnstring.json")
                     .Build();
 
-                optionsBuilder.UseSqlServer(configuration.GetConnectionString("cnE"));
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("cnS"));
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Rabat>()
+                .HasMany(c => c.Towary)
+                .WithOne(e => e.Rabat);
         }
     }
 }
