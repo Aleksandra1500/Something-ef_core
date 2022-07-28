@@ -30,7 +30,7 @@ namespace Something
         private void InitializeComponent()
         {
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.pLinqInstantFeedbackSource1 = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -39,32 +39,39 @@ namespace Something
             this.colrt_Rodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrt_Procent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTowary = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
+            this.stackPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cardView1
+            // gridView2
             // 
-            this.cardView1.GridControl = this.gridControl1;
-            this.cardView1.Name = "cardView1";
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.pLinqInstantFeedbackSource1;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.cardView1;
-            gridLevelNode1.RelationName = "FK_tw__Towar_sl_Rabat";
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            gridLevelNode1.LevelTemplate = this.gridView2;
+            gridLevelNode1.RelationName = "Towary";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(800, 450);
+            this.gridControl1.Size = new System.Drawing.Size(800, 389);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
-            this.cardView1});
+            this.gridView2});
             // 
             // pLinqInstantFeedbackSource1
             // 
@@ -79,8 +86,11 @@ namespace Something
             this.colrt_Rodzaj,
             this.colrt_Procent,
             this.colTowary});
+            this.gridView1.DefaultRelationIndex = 2;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsDetail.AllowExpandEmptyDetails = true;
+            this.gridView1.OptionsDetail.SmartDetailExpandButtonMode = DevExpress.XtraGrid.Views.Grid.DetailExpandButtonMode.CheckAllDetails;
             // 
             // colrt_id
             // 
@@ -127,17 +137,58 @@ namespace Something
             this.colTowary.VisibleIndex = 4;
             this.colTowary.Width = 94;
             // 
+            // stackPanel1
+            // 
+            this.stackPanel1.Controls.Add(this.simpleButton1);
+            this.stackPanel1.Controls.Add(this.simpleButton2);
+            this.stackPanel1.Controls.Add(this.simpleButton3);
+            this.stackPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stackPanel1.Location = new System.Drawing.Point(0, 395);
+            this.stackPanel1.Name = "stackPanel1";
+            this.stackPanel1.Size = new System.Drawing.Size(800, 55);
+            this.stackPanel1.TabIndex = 1;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(3, 13);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(119, 29);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Towar";
+            this.simpleButton1.Click += new System.EventHandler(this.Towar_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(128, 13);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(116, 29);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Text = "Dokument";
+            this.simpleButton2.Click += new System.EventHandler(this.Dokument_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(250, 13);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(116, 29);
+            this.simpleButton3.TabIndex = 2;
+            this.simpleButton3.Text = "Kontrahent";
+            this.simpleButton3.Click += new System.EventHandler(this.Kontrahent_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.stackPanel1);
             this.Controls.Add(this.gridControl1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
+            this.stackPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -152,7 +203,11 @@ namespace Something
         private DevExpress.XtraGrid.Columns.GridColumn colrt_Rodzaj;
         private DevExpress.XtraGrid.Columns.GridColumn colrt_Procent;
         private DevExpress.XtraGrid.Columns.GridColumn colTowary;
-        private DevExpress.XtraGrid.Views.Card.CardView cardView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.Utils.Layout.StackPanel stackPanel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }
 
