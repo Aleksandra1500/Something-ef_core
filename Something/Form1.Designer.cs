@@ -60,7 +60,6 @@ namespace Something
             // 
             this.gridControl1.DataSource = this.pLinqInstantFeedbackSource1;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            gridLevelNode1.LevelTemplate = this.gridView2;
             gridLevelNode1.RelationName = "Towary";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});

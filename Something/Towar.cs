@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Something
 {
+    [DebuggerDisplay("{tw_Id} {tw_IdRabat}")]
     public class Towar
     {
         public Towar() { }
@@ -108,7 +110,7 @@ namespace Something
         public int tw_WegielPodlegaOswiadczeniu { get; set; }
         public string tw_WegielOpisPochodzenia { get; set; }
 
-        public int rt_id { get; set; }
+        public int FK_tw__Towar_sl_Rabat { get; set; }
         public Rabat Rabat { get; set; }
     }
 }

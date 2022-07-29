@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace Something
 {
-    public partial class AdrEmail
+    public class AdrEmail
     {
-        public int AmId { get; set; }
-        public int AmIdAdres { get; set; }
-        public string AmEmail { get; set; }
-        public int AmRodzaj { get; set; }
-        public bool AmPodstawowy { get; set; }
+        public AdrEmail() { }
+        public int am_Id { get; set; }
+        public int am_IdAdres { get; set; }
+        public string am_Email { get; set; }
+        public int am_Rodzaj { get; set; }
+        public bool am_Podstawowy { get; set; }
 
-        public virtual AdrEwid AmIdAdresNavigation { get; set; }
+        public int FK_adr_Email_adr__Ewid { get; set; }
+        public AdrEwid AdrEwid { get; set; }
     }
 }

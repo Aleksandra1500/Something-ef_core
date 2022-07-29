@@ -3,41 +3,41 @@ using System.Collections.Generic;
 
 namespace Something
 {
-    public partial class AdrEwid
+    public class AdrEwid
     {
         public AdrEwid()
         {
-            AdrEmail = new HashSet<AdrEmail>();
+            AdrEwids = new List<AdrEmail>();
         }
 
-        public int AdrId { get; set; }
-        public int AdrIdObiektu { get; set; }
-        public int AdrTypAdresu { get; set; }
-        public string AdrNazwa { get; set; }
-        public string AdrNazwaPelna { get; set; }
-        public string AdrTelefon { get; set; }
-        public string AdrFaks { get; set; }
-        public string AdrUlica { get; set; }
-        public string AdrNrDomu { get; set; }
-        public string AdrNrLokalu { get; set; }
-        public string AdrAdres { get; set; }
-        public string AdrKod { get; set; }
-        public string AdrMiejscowosc { get; set; }
-        public int? AdrIdWojewodztwo { get; set; }
-        public int? AdrIdPanstwo { get; set; }
-        public string AdrNip { get; set; }
-        public string AdrPoczta { get; set; }
-        public string AdrGmina { get; set; }
-        public string AdrPowiat { get; set; }
-        public string AdrSkrytka { get; set; }
-        public string AdrSymbol { get; set; }
-        public int? AdrIdGminy { get; set; }
-        public int? AdrIdWersja { get; set; }
-        public int? AdrIdZmienil { get; set; }
-        public DateTime? AdrDataZmiany { get; set; }
-        public string AdrNrUrzeduSkarbowego { get; set; }
-        public string AdrNrEori { get; set; }
+        public int adr_Id { get; set; }
+        public int adr_IdObiektu { get; set; }
+        public int adr_TypAdresu { get; set; }
+        public string adr_Nazwa { get; set; }
+        public string adr_NazwaPelna { get; set; }
+        public string adr_Telefon { get; set; }
+        public string adr_Faks { get; set; }
+        public string adr_Ulica { get; set; }
+        public string adr_NrDomu { get; set; }
+        public string adr_NrLokalu { get; set; }
+        public string adr_Adres { get; set; }
+        public string adr_Kod { get; set; }
+        public string adr_Miejscowosc { get; set; }
+        public int? adr_IdWojewodztwo { get; set; }
+        public int? adr_IdPanstwo { get; set; }
+        public string adr_NIP { get; set; }
+        public string adr_Poczta { get; set; }
+        public string adr_Gmina { get; set; }
+        public string adr_Powiat { get; set; }
+        public string adr_Skrytka { get; set; }
+        public string adr_Symbol { get; set; }
+        public int? adr_IdGminy { get; set; }
+        public int? adr_IdWersja { get; set; }
+        public int? adr_IdZmienil { get; set; }
+        public DateTime? adr_DataZmiany { get; set; }
+        public string adr_NrUrzeduSkarbowego { get; set; }
+        public string adr_NrEORI { get; set; }
 
-        public virtual ICollection<AdrEmail> AdrEmail { get; set; }
+        public List<AdrEmail> AdrEwids { get; set; }
     }
 }
